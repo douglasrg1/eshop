@@ -6,5 +6,6 @@ export class UserModel{
         public token: string,
         public roles: string[],
         public username: string
+        
     ){}
 }
