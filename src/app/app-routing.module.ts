@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { FramePage } from './pages/shared/frame/frame.page';
+import { AuthorizedGuard } from './guards/authorized.guards';
+import { ManagerGuard } from './guards/manager.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},  { path: 'login', loadChildren: './pages/account/login/login.module#LoginPageModule' },
-
+  {path: 'login', loadChildren: './pages/account/login/login.module#LoginPageModule'},
+  {path: '',component: FramePage,
+    canActivate: [AuthorizedGuard],
+    children: [
+      {path: '', loadChildren: './pages/home/home.module#HomePageModule'}
+    ]
+  }
 ];
 
 @NgModule({

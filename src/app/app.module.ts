@@ -7,9 +7,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FramePage } from './pages/shared/frame/frame.page';
+import { AuthorizedGuard } from './guards/authorized.guards';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,FramePage],
   entryComponents: [],
   imports: [
     BrowserModule,

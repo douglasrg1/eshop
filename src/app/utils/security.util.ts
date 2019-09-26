@@ -34,4 +34,7 @@ export class SecurityUtil{
         return user.roles.includes(role);
 
     }
+    public static clear(){
+        localStorage.removeItem('shop.data');
+    }
 }
