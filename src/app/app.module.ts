@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FramePage } from './pages/shared/frame/frame.page';
 import { AuthorizedGuard } from './guards/authorized.guards';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent,FramePage],
@@ -17,6 +18,7 @@ import { AuthorizedGuard } from './guards/authorized.guards';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    ComponentsModule,
     HttpClientModule
   ],
   providers: [

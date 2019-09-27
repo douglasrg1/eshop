@@ -3,10 +3,10 @@
 </div>
 
 <div *ngIf="orders">
-  <ion-serachbar color="light" placeholder="Filtrar"></ion-serachbar>
+  <ion-searchbar color="light" placeholder="Filtrar"></ion-searchbar>
 
   <ion-list>
-    <ion-item class="clickable()" *ngFor="let order of orders" (click)="goToOrder(order.number)">
+    <ion-item class="clickable" *ngFor="let order of orders" (click)="goToOrder(order.number)">
       <ion-label>
         <strong>{{order.number}}</strong>
         <br>
